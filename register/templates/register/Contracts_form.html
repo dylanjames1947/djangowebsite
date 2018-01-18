@@ -1,0 +1,30 @@
+{% extends 'register/base.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                        <form method="POST" action="">{% csrf_token %}
+                            {% bootstrap_field form.name placeholder="Enter your name" %}
+                            {% bootstrap_field form.description placeholder="Enter description" %}
+                            {% bootstrap_field form.location placeholder="Enter your location" %}
+                            <div class="form-group">
+                                <div class="col-sm-12 col-md-8">
+                                    <button type="submit" class="btn btn-success">Submit contracts</button>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
